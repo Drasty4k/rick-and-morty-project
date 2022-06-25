@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { CardContainer, Image } from "./styles";
 
 interface Props {
   id: number;
@@ -11,11 +12,11 @@ interface Props {
 const Card: React.FC<Props> = ({ id, name, avatar, status }) => {
   return (
     <Link to={`/${id}`}>
-      <div>
+      <CardContainer>
         <h4>{name}</h4>
-        <img src={avatar} alt={`${name} avatar`} />
+        <Image src={avatar} alt={`${name} avatar`} />
         <p>Status: {status}</p>
-      </div>
+      </CardContainer>
     </Link>
   );
 };
