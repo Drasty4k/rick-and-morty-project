@@ -24,9 +24,13 @@ const APIContextProvider: React.FC<Props> = ({ children }) => {
     getCharacters();
   }, []);
 
+  const updateCharacters = (value: Character[]) => {
+    setCharacters(value);
+  };
+
   return (
     <APIContext.Provider
-      value={{characters}}
+      value={{characters, updateCharacters}}
     >
       {children}
     </APIContext.Provider>
