@@ -5,6 +5,8 @@ interface APIContextI {
   characters: Character[];
   updateCharacters: (value: Character[]) => void;
   getDetails: (detail: Details, event: React.ChangeEvent<HTMLSelectElement>) => void;
+  getName: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  name: string;
   status: string;
   species: string;
   type: string;
@@ -15,6 +17,8 @@ const defaulstState = {
   characters: [],
   updateCharacters: (value: Character[]) => {},
   getDetails: (detail: Details, event: React.ChangeEvent<HTMLSelectElement>) => {},
+  getName: (event: React.ChangeEvent<HTMLInputElement>) => {},
+  name: "",
   status: "",
   species: "",
   type: "",

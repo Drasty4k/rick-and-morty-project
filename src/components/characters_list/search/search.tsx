@@ -2,12 +2,14 @@ import * as React from "react";
 import APIContext from "../../../context/context";
 
 const Search: React.FC = () => {
-  const { updateCharacters } = React.useContext(APIContext);
+  const { updateCharacters, getName, name } = React.useContext(APIContext);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const timeout = React.useRef<NodeJS.Timeout>();
 
   const handleDebounceSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     clearTimeout(timeout.current);
+
+    getName(event);
 
     if (!inputRef.current?.value.trim()) return;
 
@@ -24,6 +26,7 @@ const Search: React.FC = () => {
   return (
     <div>
       <input
+        value={name}
         ref={inputRef}
         onChange={handleDebounceSearch}
         placeholder="Search Characters"
