@@ -11,29 +11,43 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ id, name, avatar, status, gender }) => {
-
   const getBgColor = () => {
     switch (gender) {
       case "Female":
-        return "#ffb4c1";
+        return {
+          container: "#ffb4c1",
+          text: "#fd8398",
+        };
       case "Male":
-        return "#68baff";
+        return {
+          container: "#68baff",
+          text: "#2c9af3",
+        };
       case "Genderless":
-        return rainbow;
+        return {
+          container: rainbow,
+          text: "#fff",
+        };
       case "unknown":
-        return "#e5e5e5";
+        return {
+          container: "#e5e5e5",
+          text: "#b3b3b3",
+        };
       default:
-        return null;
+        return {
+          container: null,
+          text: null,
+        };
     }
   };
 
   return (
     <Link style={{ textDecoration: "none" }} to={`/${id}`}>
-      <CardContainer bgColor={getBgColor()}>
-        <Name>{name}</Name>
+      <CardContainer bgColor={getBgColor().container}>
+        <Name bgColor={getBgColor().text}>{name}</Name>
         <Image src={avatar} alt={`${name} avatar`} />
-        <Gender>Gender: {gender}</Gender>
-        <Status>Status: {status}</Status>
+        <Gender bgColor={getBgColor().text}>Gender: {gender}</Gender>
+        <Status bgColor={getBgColor().text}>Status: {status}</Status>
       </CardContainer>
     </Link>
   );
