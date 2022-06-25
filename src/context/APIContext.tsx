@@ -35,7 +35,7 @@ const APIContextProvider: React.FC<Props> = ({ children }) => {
     }
   }, [name]);
 
-  const getDetails = (detail: Details,event: React.ChangeEvent<HTMLSelectElement>) => {
+  const getDetails = (detail: Details, event: React.ChangeEvent<HTMLSelectElement>) => {
     switch (detail) {
       case "status":
         setStatus(event.target.value);
@@ -44,7 +44,11 @@ const APIContextProvider: React.FC<Props> = ({ children }) => {
         setSpecies(event.target.value);
         break;
       case "type":
-        setType("")
+        setStatus("Unknown");
+        setSpecies("Mythological");
+        setGender("Female");
+        setName("God");
+        setType("");
         break;
       case "genders":
         setGender(event.target.value);

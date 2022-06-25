@@ -8,7 +8,7 @@ const Filters: React.FC = () => {
   const allStatus = ["Alive", "Dead", "Unknown"];
   const allSpecies = ["Human", "Alien", "Humanoid", "Poopybutthole", "Mythological", "Unknown", "Animal", "Disease", "Robot", "Cronenberg",];
   const allGenders = ["Female", "Male", "Genderless", "Unknown"];
-  const allTypes = [""];
+  const allTypes = ["Special"];
 
   return (
     <div>
