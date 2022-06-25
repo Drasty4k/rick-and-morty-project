@@ -1,5 +1,6 @@
 import * as React from "react";
 import APIContext from "../../context/context";
+import Card from "./card";
 
 const CharactersList: React.FC = () => {
   const { characters } = React.useContext(APIContext);
@@ -7,11 +8,12 @@ const CharactersList: React.FC = () => {
   return (
     <div>
       {characters.map((character, index) => (
-        <div key={index}>
-          <p>{character.name}</p>
-          <img src={character.image} alt={`${character.name} avatar`} />
-          <p>{character.status}</p>
-        </div>
+        <Card
+          key={index}
+          name={character.name}
+          avatar={character.image}
+          status={character.status}
+        />
       ))}
     </div>
   );
