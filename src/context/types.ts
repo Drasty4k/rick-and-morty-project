@@ -20,3 +20,5 @@ export interface Character extends ResourceBase {
   image: string;
   episode: string[];
 }
+
+export type Details = "status" | "species" | "type" | "genders";

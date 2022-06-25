@@ -1,6 +1,7 @@
 import * as React from "react";
 import APIContext from "../../context/context";
 import Card from "./card";
+import Filters from "./filters";
 import Search from "./search";
 
 const CharactersList: React.FC = () => {
@@ -9,6 +10,7 @@ const CharactersList: React.FC = () => {
   return (
     <div>
       <Search />
+      <Filters />
       {characters.map((character, index) => (
         <Card
           key={index}
