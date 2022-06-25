@@ -2,6 +2,7 @@ import * as React from "react";
 import APIContext from "../../context/context";
 import Card from "./card";
 import Filters from "./filters";
+import NotFound from "./not_found";
 import Search from "./search";
 import { CharactersSection, FiltersSection, Wrapper } from "./styles";
 
@@ -15,7 +16,7 @@ const CharactersList: React.FC = () => {
         <Filters />
       </FiltersSection>
       <CharactersSection>
-        {characters.map((character, index) => (
+        {characters ? characters.map((character, index) => (
           <Card
             key={index}
             id={character.id}
@@ -23,7 +24,7 @@ const CharactersList: React.FC = () => {
             avatar={character.image}
             status={character.status}
           />
-        ))}
+        )) : <NotFound />}
       </CharactersSection>
     </Wrapper>
   );

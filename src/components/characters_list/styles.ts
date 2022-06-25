@@ -8,6 +8,7 @@ export const Wrapper = styled.main`
 
 export const CharactersSection = styled.section`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 30px;
