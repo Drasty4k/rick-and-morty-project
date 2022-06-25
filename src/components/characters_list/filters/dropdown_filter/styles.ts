@@ -10,4 +10,6 @@ export const DropdownContainer = styled.div`
 export const Title = styled.h4`
   margin-top: 0;
   margin-bottom: 10px;
+  color: #7fea1f;
+  font-size: 20px;
 `;

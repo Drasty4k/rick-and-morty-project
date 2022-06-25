@@ -8,5 +8,5 @@ export const Input = styled.input`
   outline: none;
   border: none;
   padding-left: 11px;
-  box-shadow: #5bc2e9 -1px 1px 9px 4px;
+  box-shadow: #7fea1fb8 -1px 1px 9px 4px;
 `;
