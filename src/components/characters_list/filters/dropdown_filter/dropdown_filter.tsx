@@ -1,6 +1,7 @@
 import * as React from "react";
 import APIContext from "../../../../context/context";
 import { Details } from "../../../../context/types";
+import { DropdownContainer, Title } from "./styles";
 
 interface Props {
   details: string[];
@@ -12,8 +13,8 @@ const DropdownFilter: React.FC<Props> = ({ title, details, value }) => {
   const { getDetails } = React.useContext(APIContext);
 
   return (
-    <div>
-      <h4>{title}</h4>
+    <DropdownContainer>
+      <Title>{title}</Title>
       <select
         value={value}
         title={title}
@@ -24,7 +25,7 @@ const DropdownFilter: React.FC<Props> = ({ title, details, value }) => {
           <option value={el}>{el}</option>
         ))}
       </select>
-    </div>
+    </DropdownContainer>
   );
 };
 
