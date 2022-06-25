@@ -29,6 +29,12 @@ const APIContextProvider: React.FC<Props> = ({ children }) => {
     getCharacters();
   }, [status, species, type, gender]);
 
+  React.useEffect(() => {
+    if (name.length === 0) {
+      getCharacters();
+    }
+  }, [name]);
+
   const getDetails = (detail: Details,event: React.ChangeEvent<HTMLSelectElement>) => {
     switch (detail) {
       case "status":
