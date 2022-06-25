@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { Character } from "../../context/types";
+import { CharacterContainer, Detail, Episode, Episodes, Image, Name } from "./styles";
 
 const CharacterDetails: React.FC = () => {
   const [character, setCharacter] = React.useState<Character | null>(null);
@@ -21,21 +22,21 @@ const CharacterDetails: React.FC = () => {
   }, [API_URL_WITH_ID]);
 
   return (
-    <div>
-      <h4>{character?.name}</h4>
-      <img src={character?.image} alt={`${character?.name} avatar`} />
-      <p>Status: {character?.status}</p>
-      <p>Species: {character?.species}</p>
-      <p>Gender: {character?.gender}</p>
-      <p>Origin: {character?.origin.name}</p>
-      <p>Location: {character?.location.name}</p>
-      <p>Episodes:</p>
-      <div>
+    <CharacterContainer>
+      <Name>{character?.name}</Name>
+      <Image src={character?.image} alt={`${character?.name} avatar`} />
+      <Detail>Status: {character?.status}</Detail>
+      <Detail>Species: {character?.species}</Detail>
+      <Detail>Gender: {character?.gender}</Detail>
+      <Detail>Origin: {character?.origin.name}</Detail>
+      <Detail>Location: {character?.location.name}</Detail>
+      <Detail>Episodes:</Detail>
+      <Episodes>
         {character?.episode.map((ep, index) => (
-          <span key={index}>{ep.split("/")[5]}</span>
+          <Episode key={index}>{ep.split("/")[5]}</Episode>
         ))}{" "}
-      </div>
-    </div>
+      </Episodes>
+    </CharacterContainer>
   );
 };
 
