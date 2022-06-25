@@ -1,5 +1,6 @@
 import * as React from "react";
 import APIContext from "../../../context/context";
+import { Input } from "./styles";
 
 const Search: React.FC = () => {
   const { updateCharacters, getName, name } = React.useContext(APIContext);
@@ -25,7 +26,7 @@ const Search: React.FC = () => {
 
   return (
     <div>
-      <input
+      <Input
         value={name}
         ref={inputRef}
         onChange={handleDebounceSearch}
