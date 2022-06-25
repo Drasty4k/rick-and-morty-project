@@ -10,6 +10,7 @@ const CharactersList: React.FC = () => {
       {characters.map((character, index) => (
         <Card
           key={index}
+          id={character.id}
           name={character.name}
           avatar={character.image}
           status={character.status}
