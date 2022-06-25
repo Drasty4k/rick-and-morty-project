@@ -23,6 +23,7 @@ const CharactersList: React.FC = () => {
             name={character.name}
             avatar={character.image}
             status={character.status}
+            gender={character.gender}
           />
         )) : <NotFound />}
       </CharactersSection>
