@@ -4,7 +4,7 @@ export const DropdownContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 25px;
 `;
 
 export const Title = styled.h4`

@@ -3,6 +3,7 @@ import APIContext from "../../context/context";
 import Card from "./card";
 import Filters from "./filters";
 import NotFound from "./not_found";
+import ResetButton from "./reset_button";
 import Search from "./search";
 import { CharactersSection, FiltersSection, Wrapper } from "./styles";
 
@@ -14,6 +15,7 @@ const CharactersList: React.FC = () => {
       <FiltersSection>
         <Search />
         <Filters />
+        <ResetButton />
       </FiltersSection>
       <CharactersSection>
         {characters ? characters.map((character, index) => (

@@ -66,6 +66,14 @@ const APIContextProvider: React.FC<Props> = ({ children }) => {
     setName(event.target.value);
   };
 
+  const handleReset = () => {
+    setStatus("");
+    setSpecies("");
+    setGender("");
+    setName("");
+    setType("");
+  };
+
   return (
     <APIContext.Provider
       value={{
@@ -73,6 +81,7 @@ const APIContextProvider: React.FC<Props> = ({ children }) => {
         updateCharacters,
         getDetails,
         getName,
+        handleReset,
         name,
         status,
         species,
