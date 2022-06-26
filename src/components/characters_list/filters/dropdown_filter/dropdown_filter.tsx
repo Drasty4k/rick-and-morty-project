@@ -21,8 +21,8 @@ const DropdownFilter: React.FC<Props> = ({ title, details, value }) => {
         onChange={(event) => getDetails(title, event)}
       >
         <option value="">All</option>
-        {details.map((el) => (
-          <option value={el}>{el}</option>
+        {details.map((el, index) => (
+          <option key={index} value={el}>{el}</option>
         ))}
       </select>
     </DropdownContainer>
