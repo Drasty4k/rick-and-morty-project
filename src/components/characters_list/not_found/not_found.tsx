@@ -1,5 +1,5 @@
 import * as React from "react";
-import image404 from './assets/404.png'
+import image404 from './assets/404.jpg'
 import { Image, NotFoundContainer, Title } from "./styles";
 
 const NotFound: React.FC = () => {
