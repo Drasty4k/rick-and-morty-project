@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 interface Props {
@@ -63,4 +64,23 @@ export const Episode = styled.span<Props>`
   padding: 3px;
   border-radius: 7px;
   border: 1px solid;
+`;
+
+export const BackButton = styled(Link)`
+  margin: 10px auto 0 auto;
+  background-color: #7fea1f;
+  text-align: center;
+  display: flex;
+  width: 50px;
+  padding: 4px 18px;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
