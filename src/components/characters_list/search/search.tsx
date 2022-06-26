@@ -3,7 +3,7 @@ import APIContext from "../../../context/context";
 import { Input } from "./styles";
 
 const Search: React.FC = () => {
-  const { updateCharacters, getName, name } = React.useContext(APIContext);
+  const { updateCharacters, getName, name, status, species, type, gender } = React.useContext(APIContext);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const timeout = React.useRef<NodeJS.Timeout>();
 
@@ -14,8 +14,10 @@ const Search: React.FC = () => {
 
     if (!inputRef.current?.value.trim()) return;
 
+    const API_URL = `https://rickandmortyapi.com/api/character/?name=${inputRef?.current?.value}&status=${status}&species=${species}&type=${type}&gender=${gender}`;
+
     timeout.current = setTimeout(() => {
-      fetch(`https://rickandmortyapi.com/api/character/?name=${inputRef?.current?.value}`)
+      fetch(API_URL)
         .then(async (response) => {
           const data = await response.json();
           updateCharacters(data.results);
