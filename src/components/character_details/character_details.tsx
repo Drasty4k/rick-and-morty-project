@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { Character } from "../../context/types";
-import { CharacterContainer, Detail, Episode, Episodes, Image, Name } from "./styles";
+import { getBgColor } from "../../utils";
+import { CharacterContainer, Detail, Episode, Episodes, EpisodesContainer, Image, Name } from "./styles";
 
 const CharacterDetails: React.FC = () => {
   const [character, setCharacter] = React.useState<Character | null>(null);
@@ -22,20 +23,22 @@ const CharacterDetails: React.FC = () => {
   }, [API_URL_WITH_ID]);
 
   return (
-    <CharacterContainer>
-      <Name>{character?.name}</Name>
+    <CharacterContainer bgColor={getBgColor(character?.gender).container}>
+      <Name bgColor={getBgColor(character?.gender).text}>{character?.name}</Name>
       <Image src={character?.image} alt={`${character?.name} avatar`} />
-      <Detail>Status: {character?.status}</Detail>
-      <Detail>Species: {character?.species}</Detail>
-      <Detail>Gender: {character?.gender}</Detail>
-      <Detail>Origin: {character?.origin.name}</Detail>
-      <Detail>Location: {character?.location.name}</Detail>
-      <Detail>Episodes:</Detail>
-      <Episodes>
-        {character?.episode.map((ep, index) => (
-          <Episode key={index}>{ep.split("/")[5]}</Episode>
-        ))}{" "}
-      </Episodes>
+      <Detail bgColor={getBgColor(character?.gender).text}>Status: {character?.status}</Detail>
+      <Detail bgColor={getBgColor(character?.gender).text}>Species: {character?.species}</Detail>
+      <Detail bgColor={getBgColor(character?.gender).text}>Gender: {character?.gender}</Detail>
+      <Detail bgColor={getBgColor(character?.gender).text}>Origin: {character?.origin.name}</Detail>
+      <Detail bgColor={getBgColor(character?.gender).text}>Location: {character?.location.name}</Detail>
+      <EpisodesContainer bgColor={getBgColor(character?.gender).text}>
+        <Detail>Episodes:</Detail>
+        <Episodes>
+          {character?.episode.map((ep, index) => (
+            <Episode key={index} bgColor={getBgColor(character?.gender).text}>{ep.split("/")[5]}</Episode>
+          ))}{" "}
+        </Episodes>
+      </EpisodesContainer>
     </CharacterContainer>
   );
 };

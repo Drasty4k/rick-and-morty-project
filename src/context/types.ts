@@ -10,11 +10,13 @@ export interface ResourceBase {
   created: string;
 }
 
+export type GenderType = "Female" | "Male" | "Genderless" | "unknown";
+
 export interface Character extends ResourceBase {
   status: "Dead" | "Alive" | "unknown";
   species: string;
   type: string;
-  gender: "Female" | "Male" | "Genderless" | "unknown";
+  gender: GenderType;
   origin: CharacterLocation;
   location: CharacterLocation;
   image: string;

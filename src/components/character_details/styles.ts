@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
-export const CharacterContainer = styled.div`
+interface Props {
+  bgColor?: string | null;
+}
+
+export const CharacterContainer = styled.div<Props>`
+  background: ${(props) => props.bgColor};
   display: flex;
   flex-direction: column;
-  height: 90%;
-  width: 28%;
+  min-height: 90vh;
+  max-width: 33rem;
   color: #fff;
-  margin: auto;
+  margin: 2vh auto;
   text-align: center;
-  background-color: #ffb4c1;
   border-radius: 15px;
-  margin-top: 50px;
   padding: 20px 30px 30px 30px;
+  color: #1f1f9b;
 `;
 
-export const Name = styled.h1`
+export const Name = styled.h1<Props>`
+  background: ${(props) => props.bgColor};
   margin-top: 0;
+  border-radius: 15px;
 `;
 
 export const Image = styled.img`
@@ -24,13 +30,23 @@ export const Image = styled.img`
   border-radius: 50%;
 `;
 
-export const Detail = styled.p`
+export const Detail = styled.p<Props>`
+  background: ${(props) => props.bgColor};
   font-size: 18px;
-  background-color: purple;
-  padding: 5px 6px;
-  width: 60%;
+  padding: 5px 20px;
   margin: 10px auto 0 auto;
   border-radius: 15px;
+`;
+
+export const EpisodesContainer = styled.div<Props>`
+  background: ${(props) => props.bgColor};
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 0 18px 15px 18px;
+  text-align: center;
 `;
 
 export const Episodes = styled.div`
@@ -38,12 +54,13 @@ export const Episodes = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 3px;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
-export const Episode = styled.span`
+export const Episode = styled.span<Props>`
+  background: ${(props) => props.bgColor};
   list-style-type: none;
-  background-color: darkblue;
   padding: 3px;
-  border-radius: 6px;
+  border-radius: 7px;
+  border: 1px solid;
 `;
